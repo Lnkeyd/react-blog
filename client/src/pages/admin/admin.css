@@ -1,0 +1,185 @@
+#admin {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users {
+  margin: 20px 0;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 50%;
+}
+
+.users > * {
+  margin: 0 10px;
+}
+.users > .currentModerators {
+  width: 50%;
+}
+
+@media screen and (max-width: 1500px) {
+  .users {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .users {
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .users > .currentModerators {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 596px) {
+  .users > * {
+    margin: 0;
+  }
+  .users > .currentModerators {
+    width: 100%;
+  }
+}
+
+.users > h3 {
+  margin: 20px 0;
+}
+
+.searchWrapper {
+  position: relative;
+  width: calc(100% - 20px);
+}
+
+.searchWrapper .search {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.searchWrapper .clearSearch {
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  color: white;
+
+  border-radius: 4px;
+  background-color: brown;
+
+  border: 1px solid red;
+
+  transform: translate(50%, -20%);
+}
+
+.searchWrapper .clearSearch:hover {
+  background-color: rgb(189, 65, 65);
+}
+
+.usersList {
+  margin: 15px 0;
+
+  margin-left: 0;
+  padding-left: 0;
+
+  width: 100%;
+}
+
+.usersList > a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.user {
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 10px;
+
+  margin: 10px 0;
+
+  list-style-type: none;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.user > * {
+  text-align: start;
+  margin: 0 5px;
+}
+
+.user > .userImg {
+  width: 40px;
+  height: 40px;
+}
+
+.user > .userImg > img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.user > span:nth-child(2) {
+  min-width: 10%;
+}
+
+.newUserForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newUserForm > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.newUserForm > div > label {
+  text-align: start;
+  width: 20%;
+}
+
+.newUserForm > div > .defaultInput {
+  margin: 10px;
+}
+
+.newUserForm > div > .defaultButton {
+  margin: 0;
+}
+
+@media screen and (max-width: 596px) {
+  .newUserForm {
+    margin-top: 10px;
+    flex-direction: column;
+    margin-bottom: 80px;
+
+    /* align-items: flex-start; */
+  }
+
+  .newUserForm > div > .defaultButton {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

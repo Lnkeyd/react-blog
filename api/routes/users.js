@@ -33,10 +33,10 @@ router.put("/:id", auth, checkRole(2, 3), async (req, res) => {
     var newUser = { ...req.body };
 
     if (foundUser.profilePic && req.body.profilePic) {
-      const oldPath = path.join(__dirname, "../images/", foundUser._id + foundUser.profilePic);
+      const oldPath = path.join(__dirname, "../images/", foundUser.profilePic);
       fs.unlink(oldPath, (err) => {
         if (err) {
-          console.log("unliking image error " + err);
+          console.log("1 unliking image error " + err);
         }
       });
       newUser.profilePic = foundUser._id + req.body.profilePic;
@@ -69,7 +69,7 @@ router.delete("/:id", auth, checkRole(2, 3), async (req, res) => {
   const currentUser = await User.findById(req.userId);
 
   if (currentUser.level === 2) {
-    if (req.userId !== req.params.id) {
+    if (req.userId != req.params.id) {
       return res.status(401).json("You can update only your account!");
     }
   }
@@ -86,7 +86,7 @@ router.delete("/:id", auth, checkRole(2, 3), async (req, res) => {
       const imagePath = path.join(__dirname, "../images/", user.profilePic);
       fs.unlink(imagePath, (err) => {
         if (err) {
-          console.log("unliking image error " + err);
+          console.log(" 2unliking image error " + err);
         }
       });
       res.status(200).json("User has been deleted...");

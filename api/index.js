@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
@@ -8,11 +9,10 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const file = require("./multer");
 const cors = require("cors");
-const path = require("path");
 const bodyParser = require("body-parser");
 const cookies = require("cookie-parser");
 
-dotenv.config();
+dotenv.config({ path: `${__dirname}/../.env` });
 app.use(express.json({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookies());

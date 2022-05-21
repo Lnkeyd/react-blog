@@ -38,9 +38,10 @@ app.use("/api/categories", categoryRoute);
 
 if (process.env.NODE_ENV === "production") {
   // Exprees will serve up production assets
-  app.use(express.static(path.resolve(__dirname, "client/build")));
+  console.log(__dirname);
+  app.use(express.static("app/client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "app/client/build", "index.html"));
   });
 }
 

@@ -1,71 +1,115 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
-import './topbar.css'
-import logo from '../../img/logo/logo.svg'
-
+import { logoutUser } from "../../context/ActionCreators";
+import "./topbar.css";
+import logo from "../../img/logo/logo.svg";
+import placeholderUser from "../../img/user.png";
 
 export default function TopBar() {
-    const {user, dispatch} = useContext(Context)
-    const PF = "http://localhost:5000/images/"
-    const handleLogout = () => {
-        dispatch({type: "LOGOUT"})
-    }
+  const { user, isFetching, dispatch } = useContext(Context);
+  const PF = "/api/images/";
+  const handleLogout = async () => {
+    logoutUser(dispatch);
+  };
 
-    return (
+  return (
     <div className='top'>
-        <div className="topCenter">
-            <ul className='topList menuList'>
-                <li className='topListItem menuItem'>
-                    <Link className="link" to="/"><img className="logo" src={logo} alt="logo" /></Link>
-                </li>
-                <li className='topListItem menuItem'>
-                    <Link className="link" to="/theory">теория</Link>
-                </li>
-                <li className='topListItem menuItem'>
-                    <Link className="link" to="/exercises">упражнения</Link>
-                </li>
-                <li className='topListItem menuItem'>
-                    <Link className="link" to="/instruments">инструменты</Link>
-                </li>
-                <li className='topListItem menuItem'>
-                    <Link className="link" to="/blog">блог</Link>
-                </li>
-                <li className='topListItem menuItem' style={user ? {marginRight: 15} : {marginRight: 0}}>
-                    <Link className="link" to="/contact">контакты</Link>
-                </li>
-                <li className='topListItem'>
-                    {user && <Link className="link" to="/write">WRITE</Link>}
-                </li>
-                <li className='topListItem' onClick={handleLogout}>
-                    {user && "LOGOUT"}
-                </li>
+      <div className='topCenter'>
+        <div className='menuItem'>
+          <Link className='link' to='/blog'>
+            <img className='logo' src={logo} alt='logo' draggable={false} />
+          </Link>
+        </div>
+        <ul className='topList menuList'>
+          {/* <li className='topListItem menuItem'>
+            <Link className='link' to='/theory'>
+              теория
+            </Link>
+          </li>
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/exercises'>
+              упражнения
+            </Link>
+          </li>
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/instruments'>
+              инструменты
+            </Link>
+          </li> */}
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/blog'>
+              Blog
+            </Link>
+          </li>
+          {/* <li className='topListItem menuItem' style={user ? { marginRight: 15 } : { marginRight: 0 }}>
+            <Link className='link' to='/contact'>
+              контакты
+            </Link>
+          </li> */}
+          <li className='topListItem menuItem'>
+            {user && (
+              <Link className='link' to='/write'>
+                Write post
+              </Link>
+            )}
+          </li>
+          <li className='topListItem menuItem'>
+            {user && user.level === 3 && (
+              <Link className='link' to='/admin'>
+                Admin panel
+              </Link>
+            )}
+          </li>
+        </ul>
+        <div className='topRight'>
+          {user ? (
+            <>
+              <Link to='/settings'>
+                <img
+                  className='topImage'
+                  src={user.profilePic ? PF + user.profilePic : placeholderUser}
+                  alt='profile'
+                  draggable={false}
+                />
+              </Link>
+              <div className='exitBtn' onClick={handleLogout}>
+                Logout
+              </div>
+            </>
+          ) : (
+            <ul className='topList'>
+              <li className='topListItem'>
+                <Link className='link' to='/login'>
+                  LOGIN
+                </Link>
+              </li>
             </ul>
+          )}
+          {/* <i className='topSearchIcon fa-solid fa-magnifying-glass'></i> */}
         </div>
-        <div className="topRight">
-            
-            {
-                user ? (
-                    <Link to="/settings">
-                        <img 
-                        className="topImage" 
-                        src={PF + user.profilePic}
-                        alt="profile" 
-                        />
-                    </Link>
-                ) : (
-                    <ul className="topList">
-                        <li className="topListItem">
-                            <Link className="link" to="/login">LOGIN</Link>
-                        </li>
-                        <li className="topListItem">
-                            <Link className="link" to="/register">REGISTER</Link>
-                        </li>
-                    </ul>
-                )
-            }
-            <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
-        </div>
+      </div>
+      <div className='mobileMenu'>
+        <li className='topListItem menuItem'>
+          <Link className='link' to='/blog'>
+            Blog
+          </Link>
+        </li>
+        {user && (
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/write'>
+              Write post
+            </Link>
+          </li>
+        )}
+        {user && user.level === 3 && (
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/admin'>
+              Admin panel
+            </Link>
+          </li>
+        )}
+      </div>
     </div>
-  )
+  );
 }

@@ -1,80 +1,144 @@
 .top {
-    width: 100%;
-    height: 140px;
-    padding-top: 20px;
-    background-color: #D1E5E9;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 999;
+  width: 100%;
+  height: 85px;
+  padding: 20px 0;
+  background-color: #d1e5e9;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999;
 }
 
 .topRight {
- display: flex;
- flex: 3;
- justify-content: center;
+  display: flex;
+  /* flex: 3; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topRight .exitBtn {
+  color: red;
+  cursor: pointer;
 }
 
 .topCenter {
+  position: relative;
+  max-width: 75%;
+  margin: 0 auto;
+
+  display: flex;
+  flex: 16;
+  justify-content: center;
+}
+
+.topCenter > * {
+  margin: 0 20px;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media screen and (max-width: 596px) {
+  .topCenter {
+    max-width: 75%;
+    justify-content: space-between;
+  }
+
+  .mobileMenu {
+    position: absolute;
     display: flex;
-    flex: 16;
-    justify-content: center;
+
+    width: 100%;
+    height: 70px;
+
+    top: calc(100vh - 70px);
+    justify-content: space-around;
+    background-color: #d1e5e9;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topCenter {
+    max-width: 90%;
+  }
+  .mobileMenu > .menuItem {
+    font-size: 20px;
+  }
 }
 
 .topIcon {
-    font-size: 20px;
-    margin-right: 10px;
-    color: #444;
-    cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  color: #444;
+  cursor: pointer;
 }
 
 .topImage {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .topList {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
 }
 
-.topListItem{
-    margin-right: 20px;
-    cursor: pointer;
-    font-family: 'Epilogue', sans-serif;
+@media screen and (max-width: 596px) {
+  .menuList {
+    display: none !important;
+  }
 }
 
-.menuList{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.topListItem {
+  margin-right: 20px;
+  cursor: pointer;
+  font-family: "Epilogue", sans-serif;
 }
 
-.menuItem{
-    font-size: 36px;
-    margin-right: 4vw;
+.menuList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menuItem {
+  font-size: 28px;
+  margin-right: 4vw;
+
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+
+  margin: 5px 10px;
+}
+
+.menuItem > a {
+  display: block;
 }
 
 .menuItem:hover {
-    color: #A2224C;
+  color: #a2224c;
 }
 
-.topSearchIcon{
-    font-size: 18px;
-    color: #222;
-    cursor: pointer;
-    margin-left: 15px;
+.topSearchIcon {
+  font-size: 18px;
+  color: #222;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 .logo {
-    width: 58px;
-    margin-right: 40px;
-    margin-left: 40px;
+  width: 58px;
+  margin: 0 20px;
 }

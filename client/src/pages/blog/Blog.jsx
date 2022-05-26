@@ -1,5 +1,4 @@
 // import Header from "../../components/header/Header";
-import Sidebar from "../../components/sidebar/Sidebar";
 import Posts from "../../components/posts/Posts";
 import "./blog.css";
 import { useEffect, useState } from "react";
@@ -22,7 +21,6 @@ export default function Blog() {
       {/* <Header /> */}
       <div className='home'>
         <Posts posts={posts} />
-        <Sidebar />
       </div>
     </>
   );

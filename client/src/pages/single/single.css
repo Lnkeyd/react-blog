@@ -1,9 +1,12 @@
 .single {
   display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 715px) {
   .single {
     flex-direction: column;
+    max-width: 95vw;
   }
 }

@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
   const PF = "/api/images/";
+
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timezone: 'UTC'
+  };
+
   return (
     <div className='post'>
       {post.photo && <img className='postImg' src={PF + post.photo} alt='' draggable={false} />}
@@ -16,7 +24,7 @@ export default function Post({ post }) {
           <span className='postTitle'>{post.title}</span>
         </Link>
         <hr />
-        <span className='postDate'>{new Date(post.createdAt).toDateString()}</span>
+        <span className='postDate'>{new Date(post.createdAt).toLocaleDateString("ru", options)}</span>
       </div>
       <p className='postDesc'>{post.desc}</p>
     </div>

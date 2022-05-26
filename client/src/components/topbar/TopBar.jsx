@@ -54,14 +54,14 @@ export default function TopBar() {
           <li className='topListItem menuItem'>
             {user && (
               <Link className='link' to='/write'>
-                Write post
+                создать пост
               </Link>
             )}
           </li>
           <li className='topListItem menuItem'>
             {user && user.level === 3 && (
               <Link className='link' to='/admin'>
-                Admin panel
+                админ панель
               </Link>
             )}
           </li>
@@ -78,38 +78,37 @@ export default function TopBar() {
                 />
               </Link>
               <div className='exitBtn' onClick={handleLogout}>
-                Logout
+                Выйти
               </div>
             </>
           ) : (
             <ul className='topList'>
               <li className='topListItem'>
                 <Link className='link' to='/login'>
-                  LOGIN
+                  Admin
                 </Link>
               </li>
             </ul>
           )}
-          {/* <i className='topSearchIcon fa-solid fa-magnifying-glass'></i> */}
         </div>
       </div>
       <div className='mobileMenu'>
         <li className='topListItem menuItem'>
           <Link className='link' to='/blog'>
-            Blog
+            блог
           </Link>
         </li>
         {user && (
           <li className='topListItem menuItem'>
             <Link className='link' to='/write'>
-              Write post
+              создать пост
             </Link>
           </li>
         )}
         {user && user.level === 3 && (
           <li className='topListItem menuItem'>
             <Link className='link' to='/admin'>
-              Admin panel
+              админ панель
             </Link>
           </li>
         )}

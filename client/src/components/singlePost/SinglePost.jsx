@@ -40,6 +40,13 @@ export default function SinglePost() {
     } catch (err) {}
   };
 
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timezone: 'UTC'
+  };
+
   return (
     <div className='singlePost'>
       <div className='singlePostWrapper'>
@@ -65,12 +72,12 @@ export default function SinglePost() {
         )}
         <div className='singlePostInfo'>
           <span className='singlePostAuthor'>
-            Author:
+            Автор:&nbsp;
             <Link to={`/?user=${post.username}`} className='link'>
               <b>{post.username}</b>
             </Link>
           </span>
-          <span className='singlePostDate'>{new Date(post.createdAt).toDateString()}</span>
+          <span className='singlePostDate'>{new Date(post.createdAt).toLocaleDateString("ru", options)}</span>
         </div>
         {updateMode ? (
           <textarea className='singlePostDescInput' value={desc} onChange={(e) => setDesc(e.target.value)} />

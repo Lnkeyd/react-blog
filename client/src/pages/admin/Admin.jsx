@@ -39,7 +39,7 @@ export default function Admin() {
     <div id='admin'>
       <div className='users'>
         <div className='currentModerators'>
-          <h2>Current moderators</h2>
+          <h2>Текущие модераторы:</h2>
           {users !== undefined && users.length > 0 ? (
             <>
               <div className='searchWrapper'>
@@ -77,13 +77,13 @@ export default function Admin() {
               </ul>
             </>
           ) : (
-            <h4>No moderators found</h4>
+            <h4>модераторы не найдены</h4>
           )}
         </div>
         <div className='newUserForm'>
-          <h2>Create new moderator</h2>
+          <h2>Создать нового модератора</h2>
           <div>
-            <label htmlFor='username'>Username</label>
+            <label htmlFor='username'>Модератор</label>
             <input
               name='username'
               type={"text"}
@@ -103,7 +103,7 @@ export default function Admin() {
             />
           </div>
           <div>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>Пароль</label>
             <input
               name='password'
               type={"password"}
@@ -113,7 +113,7 @@ export default function Admin() {
             />
           </div>
           <button className='defaultButton' onClick={addNewUser}>
-            Create moderator
+            Создать
           </button>
         </div>
       </div>

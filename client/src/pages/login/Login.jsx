@@ -17,14 +17,14 @@ export default function Login() {
   return (
     <div className='login'>
       {user && <Navigate to='/settings' replace={true} />}
-      <span className='loginTitle'>Login</span>
+      <span className='loginTitle'>Авторизация</span>
       <form action='' className='loginForm' onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input className='loginInput' type='text' placeholder='Enter your email...' ref={userRef} />
-        <label>Password</label>
-        <input className='loginInput' type='password' placeholder='Enter your password...' ref={passwordRef} />
+        <label>Модератор</label>
+        <input className='loginInput' type='text' placeholder='Введите email...' ref={userRef} />
+        <label>Пароль</label>
+        <input className='loginInput' type='password' placeholder='Введите пароль...' ref={passwordRef} />
         <button className='loginButton' type='submit' disabled={isFetching}>
-          Login
+          Войти
         </button>
       </form>
     </div>

@@ -74,14 +74,14 @@ export default function Settings() {
       <div className='settingsWrapper'>
         <div className='settingsTitle'>
           <span className='settingsUpdateTitle'>
-            {data && data.id ? `Update ${currentUser.username}'s Account` : "Update Your Account"}
+            {data && data.id ? `Update ${currentUser.username}'s Account` : "Обновить данные"}
           </span>
           <span className='settingsDeleteTitle' onClick={handleDelete}>
-            {data && data.id ? `Delete ${currentUser.username} Account` : "Delete Your Account"}
+            {data && data.id ? `Delete ${currentUser.username} Account` : "Удалить аккаунт"}
           </span>
         </div>
         <form action='' className='settingsForm' onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
+          <label>Изображение профиля</label>
           <div className='settingsPP'>
             <img
               src={
@@ -104,7 +104,7 @@ export default function Settings() {
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
-          <label htmlFor='username'>Username</label>
+          <label htmlFor='username'>Модератор</label>
           <input
             type='text'
             name='username'
@@ -120,7 +120,7 @@ export default function Settings() {
             onChange={handleChange}
             value={currentUser.email || ""}
           />
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Пароль</label>
           <input
             type='password'
             name='password'
@@ -129,12 +129,11 @@ export default function Settings() {
             value={currentUser.password || ""}
           />
           <button className='settingsSubmit defaultButton' type='submit'>
-            Update
+            Обновить
           </button>
-          {success && <span style={{ color: "teal" }}>Profile has been updated...</span>}
+          {success && <span style={{ color: "teal" }}>Ваш профиль был обновлен...</span>}
         </form>
       </div>
-      {/* <Sidebar /> */}
     </div>
   );
 }

@@ -17,36 +17,40 @@ export default function TopBar() {
     <div className='top'>
       <div className='topCenter'>
         <div className='menuItem'>
-          <Link className='link' to='/blog'>
+          <Link className='link' to='/'>
             <img className='logo' src={logo} alt='logo' draggable={false} />
           </Link>
         </div>
         <ul className='topList menuList'>
-          {/* <li className='topListItem menuItem'>
-            <Link className='link' to='/theory'>
-              теория
-            </Link>
-          </li>
-          <li className='topListItem menuItem'>
-            <Link className='link' to='/exercises'>
-              упражнения
-            </Link>
-          </li>
-          <li className='topListItem menuItem'>
-            <Link className='link' to='/instruments'>
-              инструменты
-            </Link>
-          </li> */}
+          { !user && (
+            <>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/theory'>
+                теория
+              </Link>
+            </li>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/exercises'>
+                упражнения
+              </Link>
+            </li>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/instruments'>
+                инструменты
+              </Link>
+            </li>
+            </>
+          )}
           <li className='topListItem menuItem'>
             <Link className='link' to='/blog'>
-              Blog
+              блог
             </Link>
           </li>
-          {/* <li className='topListItem menuItem' style={user ? { marginRight: 15 } : { marginRight: 0 }}>
-            <Link className='link' to='/contact'>
-              контакты
-            </Link>
-          </li> */}
+          {! user && (
+            <li className='topListItem menuItem'>
+              <Link className="link" to="/contact">контакты</Link>
+            </li>
+          )}
           <li className='topListItem menuItem'>
             {user && (
               <Link className='link' to='/write'>

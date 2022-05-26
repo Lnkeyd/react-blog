@@ -4,6 +4,10 @@ import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Blog from "./pages/blog/Blog";
+import Exercises from "./pages/exercises/Exercises"
+import TextNote from "./pages/exercises/text-note/TextNote"
+import Instruments from "./pages/instruments/Instruments"
+import Contact from "./pages/contact/Contact"
 import Admin from "./pages/admin/Admin";
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import { useContext, useEffect } from "react";
@@ -28,7 +32,13 @@ function App() {
       <div style={{ marginTop: "125px" }}>
         <Routes>
           <Route path='*' element={<Login />} />
+          <Route path="/exercises" element={<Exercises/>}/>
+          <Route path="/exercises/text-note" element={<TextNote/>}/>
+
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/instruments" element={<Instruments/>}/>
           <Route path='/blog' element={<Blog />} />
+
           <Route path='/login' element={user ? <Blog /> : <Login />} />
           <Route path='/settings' element={user ? <Settings /> : <Login />} />
           <Route path='/write' element={user ? <Write /> : <Login />} />

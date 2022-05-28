@@ -86,7 +86,7 @@ export default function SinglePost() {
         )}
         {updateMode && (
           <button className='singlePostButton' onClick={handleUpdate}>
-            Update
+            Обновить
           </button>
         )}
       </div>

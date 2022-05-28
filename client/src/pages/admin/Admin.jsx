@@ -47,7 +47,7 @@ export default function Admin() {
                   className='search defaultInput'
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder='Begin writing nick or email'
+                  placeholder='Начните писать ник или email'
                 />
                 {search.length > 0 && (
                   <button className='clearSearch' onClick={() => setSearch("")}>

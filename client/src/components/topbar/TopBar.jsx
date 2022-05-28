@@ -14,8 +14,9 @@ export default function TopBar() {
   };
 
   return (
+    <>
     <div className='top'>
-      <div className='topCenter'>
+      <div className='topCenter desctopMenu'>
         <div className='menuItem'>
           <Link className='link' to='/'>
             <img className='logo' src={logo} alt='logo' draggable={false} />
@@ -92,27 +93,95 @@ export default function TopBar() {
           )}
         </div>
       </div>
-      <div className='mobileMenu'>
-        <li className='topListItem menuItem'>
-          <Link className='link' to='/blog'>
-            блог
-          </Link>
-        </li>
+      <div className='mobileMenu' style={user && {top: 'calc(100vh - 70px)', justifyContent: 'space-around'}}>
+        {/* here you put some code with logo and menu-burger */}
+          {!user && (
+            <>
+            <div className="topCenter">
+                <div className='menuItem'>
+                  <Link className='link' to='/'>
+                    <img className='logo' src={logo} alt='logo' draggable={false} />
+                  </Link>
+                </div>
+                <li className='topListItem menuItem'>
+                <div className="burger-menu">
+                  <span/>
+                </div>
+              </li>
+            </div>
+            </>
+          )}
+        
         {user && (
-          <li className='topListItem menuItem'>
-            <Link className='link' to='/write'>
-              создать пост
+          <>
+            <li className='topListItem menuItem'>
+            <Link className='link' to='/blog'>
+                блог
             </Link>
           </li>
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/write'>
+              +пост
+            </Link>
+          </li>
+          </>
         )}
         {user && user.level === 3 && (
           <li className='topListItem menuItem'>
             <Link className='link' to='/admin'>
-              админ панель
+              админ
             </Link>
           </li>
         )}
       </div>
     </div>
+    {/* <div className="mobileItems">
+        <ul className='topList menuList'>
+          { !user && (
+            <>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/theory'>
+                теория
+              </Link>
+            </li>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/exercises'>
+                упражнения
+              </Link>
+            </li>
+            <li className='topListItem menuItem'>
+              <Link className='link' to='/instruments'>
+                инструменты
+              </Link>
+            </li>
+            </>
+          )}
+          <li className='topListItem menuItem'>
+            <Link className='link' to='/blog'>
+              блог
+            </Link>
+          </li>
+          {! user && (
+            <li className='topListItem menuItem'>
+              <Link className="link" to="/contact">контакты</Link>
+            </li>
+          )}
+          <li className='topListItem menuItem'>
+            {user && (
+              <Link className='link' to='/write'>
+                создать пост
+              </Link>
+            )}
+          </li>
+          <li className='topListItem menuItem'>
+            {user && user.level === 3 && (
+              <Link className='link' to='/admin'>
+                админ панель
+              </Link>
+            )}
+          </li>
+        </ul>
+    </div> */}
+  </>
   );
 }

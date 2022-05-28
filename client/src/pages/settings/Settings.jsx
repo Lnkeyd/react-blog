@@ -74,10 +74,10 @@ export default function Settings() {
       <div className='settingsWrapper'>
         <div className='settingsTitle'>
           <span className='settingsUpdateTitle'>
-            {data && data.id ? `Update ${currentUser.username}'s Account` : "Обновить данные"}
+            {data && data.id ? `Обновить аккаунт ${currentUser.username}` : "Обновить данные"}
           </span>
           <span className='settingsDeleteTitle' onClick={handleDelete}>
-            {data && data.id ? `Delete ${currentUser.username} Account` : "Удалить аккаунт"}
+            {data && data.id ? `Удалить аккаунт ${currentUser.username}` : "Удалить аккаунт"}
           </span>
         </div>
         <form action='' className='settingsForm' onSubmit={handleSubmit}>
@@ -124,7 +124,7 @@ export default function Settings() {
           <input
             type='password'
             name='password'
-            placeholder='password'
+            placeholder='ваш пароль'
             onChange={handleChange}
             value={currentUser.password || ""}
           />

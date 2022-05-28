@@ -29,7 +29,7 @@ function App() {
   return (
     <Router>
       <TopBar />
-      <div style={{ marginTop: "85px" }}>
+      <div style={{ marginTop: "70px" }}>
         <Routes>
           <Route path='*' element={<Login />} />
           <Route path="/exercises" element={<Exercises/>}/>

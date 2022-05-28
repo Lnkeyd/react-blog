@@ -44,12 +44,12 @@ export default function Write() {
           <input
             className='writeInput'
             type='text'
-            placeholder='Title'
+            placeholder='Заголовок'
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
           <button className='writeSubmit' type='submit'>
-            Publish
+            Опубликовать
           </button>
         </div>
         <div className='writeFormGroup'>
@@ -58,7 +58,7 @@ export default function Write() {
             id=''
             cols='30'
             rows='10'
-            placeholder='Tell your story...'
+            placeholder='Основной текст...'
             type='text'
             className='writeInput writeText'
             onChange={(e) => setDesc(e.target.value)}></textarea>

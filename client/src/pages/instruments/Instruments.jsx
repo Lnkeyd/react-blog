@@ -6,7 +6,7 @@ import Poster from './poster.webp'
 
 export default function Instruments() {
   return (
-      <>
+    <div className='instruments'>
       <h1 className="header">AR-модели</h1>
       {/* <model-viewer> HTML element */}
       <div className="flex">
@@ -60,6 +60,6 @@ export default function Instruments() {
       </div>
     {/* Loads <model-viewer> for browsers: */}
     {/* <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> */}
-    </>
+    </div>
   )
 }

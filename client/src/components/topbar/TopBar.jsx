@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import { logoutUser } from "../../context/ActionCreators";
@@ -7,11 +7,15 @@ import logo from "../../img/logo/logo.svg";
 import placeholderUser from "../../img/user.png";
 
 export default function TopBar() {
+  const [toggleBurger, setToggleBurger] = useState(true)
   const { user, isFetching, dispatch } = useContext(Context);
   const PF = "/api/images/";
   const handleLogout = async () => {
     logoutUser(dispatch);
   };
+  const handleMobile = () => {
+    setToggleBurger(!toggleBurger)
+  }
 
   return (
     <>
@@ -104,9 +108,13 @@ export default function TopBar() {
                   </Link>
                 </div>
                 <li className='topListItem menuItem'>
-                <div className="burger-menu">
-                  <span/>
-                </div>
+                {!toggleBurger ? (
+                  <div className="burger-menu" onClick={handleMobile}>
+                    <span/>
+                  </div>
+                ) : (
+                  <div className="burger-cross" onClick={handleMobile}/>
+                )}
               </li>
             </div>
             </>
@@ -135,10 +143,9 @@ export default function TopBar() {
         )}
       </div>
     </div>
-    {/* <div className="mobileItems">
-        <ul className='topList menuList'>
-          { !user && (
-            <>
+    {toggleBurger && (
+    <div className="mobileItems">
+        <ul className='mobileList'>
             <li className='topListItem menuItem'>
               <Link className='link' to='/theory'>
                 теория
@@ -154,34 +161,19 @@ export default function TopBar() {
                 инструменты
               </Link>
             </li>
-            </>
-          )}
           <li className='topListItem menuItem'>
             <Link className='link' to='/blog'>
               блог
             </Link>
           </li>
-          {! user && (
-            <li className='topListItem menuItem'>
-              <Link className="link" to="/contact">контакты</Link>
-            </li>
-          )}
           <li className='topListItem menuItem'>
-            {user && (
-              <Link className='link' to='/write'>
-                создать пост
-              </Link>
-            )}
+            <Link className="link" to="/contact">контакты</Link>
           </li>
           <li className='topListItem menuItem'>
-            {user && user.level === 3 && (
-              <Link className='link' to='/admin'>
-                админ панель
-              </Link>
-            )}
+            <Link className='link' to='/login'>Admin</Link>
           </li>
         </ul>
-    </div> */}
+    </div>)}
   </>
   );
 }

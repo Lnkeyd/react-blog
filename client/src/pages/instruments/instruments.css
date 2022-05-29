@@ -9,6 +9,10 @@
             box-sizing: border-box;
     font-family: 'Epilogue', sans-serif;
   }
+
+  .instruments {
+    margin-top: 85px;
+  }
   
   .home_container {
     margin-top: 20px;
@@ -59,6 +63,7 @@
   
   .header {
     text-align: center;
+    margin-top: 20px;
   }
   
   model-viewer {

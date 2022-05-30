@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import { logoutUser } from "../../context/ActionCreators";
@@ -7,7 +7,7 @@ import logo from "../../img/logo/logo.svg";
 import placeholderUser from "../../img/user.png";
 
 export default function TopBar() {
-  const [toggleBurger, setToggleBurger] = useState(true)
+  const [toggleBurger, setToggleBurger] = useState(false)
   const { user, isFetching, dispatch } = useContext(Context);
   const PF = "/api/images/";
   const handleLogout = async () => {
@@ -16,6 +16,10 @@ export default function TopBar() {
   const handleMobile = () => {
     setToggleBurger(!toggleBurger)
   }
+
+  useEffect(() => {
+    setToggleBurger(false)
+  },[])
 
   return (
     <>
@@ -147,30 +151,30 @@ export default function TopBar() {
     <div className="mobileItems">
         <ul className='mobileList'>
             <li className='topListItem menuItem'>
-              <Link className='link' to='/theory'>
+              <Link className='link' to='/theory' onClick={() => {setToggleBurger(false)}}>
                 теория
               </Link>
             </li>
             <li className='topListItem menuItem'>
-              <Link className='link' to='/exercises'>
+              <Link className='link' to='/exercises' onClick={() => {setToggleBurger(false)}}>
                 упражнения
               </Link>
             </li>
             <li className='topListItem menuItem'>
-              <Link className='link' to='/instruments'>
+              <Link className='link' to='/instruments' onClick={() => {setToggleBurger(false)}}>
                 инструменты
               </Link>
             </li>
           <li className='topListItem menuItem'>
-            <Link className='link' to='/blog'>
+            <Link className='link' to='/blog' onClick={() => {setToggleBurger(false)}}>
               блог
             </Link>
           </li>
           <li className='topListItem menuItem'>
-            <Link className="link" to="/contact">контакты</Link>
+            <Link className="link" to="/contact" onClick={() => {setToggleBurger(false)}}>контакты</Link>
           </li>
           <li className='topListItem menuItem'>
-            <Link className='link' to='/login'>Admin</Link>
+            <Link className='link' to='/login' onClick={() => {setToggleBurger(false)}}>Admin</Link>
           </li>
         </ul>
     </div>)}

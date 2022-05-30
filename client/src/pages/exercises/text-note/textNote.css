@@ -32,3 +32,25 @@
     margin-top: 10px;
     font-size: 25px;
 }
+
+@media screen and (max-width: 840px) {
+    .question {
+        font-size: 18px;
+    }
+    .checkAnswer {
+        width: 252px;
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 840px) {
+    .question {
+        font-size: 14px;
+    }
+    .checkAnswer {
+        width: 200px;
+        height: 44px;
+        font-size: 12px;
+    }
+}

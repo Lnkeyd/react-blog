@@ -94,3 +94,49 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+@media screen and (max-width: 840px) {
+    .description {
+        min-width: 322px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .header {
+        font-size: 30px;
+    }
+
+    .icon {
+        width: 31px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .description {
+        min-width: 270px;
+        font-size: 14px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .icon {
+        width: 21px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .module {
+        width: 100vw;
+        border-radius: 0;
+        padding: 14px 8%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .description {
+        min-width: 0px;
+        margin: 0 auto;
+    }
+}

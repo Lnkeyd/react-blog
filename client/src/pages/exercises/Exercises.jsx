@@ -148,7 +148,7 @@ export default function Exercises() {
                   </div>
                   <div className="description">Определите ноту по названию</div>
                 </Link>
-                <Link className="link module" to="/exercises/text-note">
+                <Link className="link module" to="/exercises/text-chord">
                   <div className="background">
                     <img src={chord} alt="" className="icon" />
                   </div>

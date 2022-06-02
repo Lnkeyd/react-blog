@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import Blog from "./pages/blog/Blog";
 import Exercises from "./pages/exercises/Exercises"
 import TextNote from "./pages/exercises/text-note/TextNote"
+import TextChord from "./pages/exercises/text-chord/TextChord";
 import Instruments from "./pages/instruments/Instruments"
 import Contact from "./pages/contact/Contact"
 import Admin from "./pages/admin/Admin";
@@ -34,6 +35,7 @@ function App() {
           <Route path='*' element={<Login />} />
           <Route path="/exercises" element={<Exercises/>}/>
           <Route path="/exercises/text-note" element={<TextNote/>}/>
+          <Route path="/exercises/text-chord" element={<TextChord/>}/>
 
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/instruments" element={<Instruments/>}/>

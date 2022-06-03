@@ -7,6 +7,7 @@ import Blog from "./pages/blog/Blog";
 import Exercises from "./pages/exercises/Exercises"
 import TextNote from "./pages/exercises/text-note/TextNote"
 import TextChord from "./pages/exercises/text-chord/TextChord";
+import TextScale from "./pages/exercises/text-scale/TextScale";
 import Instruments from "./pages/instruments/Instruments"
 import Contact from "./pages/contact/Contact"
 import Admin from "./pages/admin/Admin";
@@ -36,6 +37,8 @@ function App() {
           <Route path="/exercises" element={<Exercises/>}/>
           <Route path="/exercises/text-note" element={<TextNote/>}/>
           <Route path="/exercises/text-chord" element={<TextChord/>}/>
+          <Route path="/exercises/text-scale" element={<TextScale/>}/>
+
 
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/instruments" element={<Instruments/>}/>

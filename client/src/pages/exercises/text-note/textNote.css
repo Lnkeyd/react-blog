@@ -33,6 +33,12 @@
     font-size: 25px;
 }
 
+header {
+    margin-top: 35px;
+    font-size: 18px;
+    max-width: 70%;
+}
+
 @media screen and (max-width: 840px) {
     .question {
         font-size: 18px;
@@ -41,10 +47,14 @@
         width: 252px;
         font-size: 15px;
     }
+    header {
+        font-size: 14px;
+        text-align: center;
+    }
 }
 
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 400px) {
     .question {
         font-size: 14px;
     }

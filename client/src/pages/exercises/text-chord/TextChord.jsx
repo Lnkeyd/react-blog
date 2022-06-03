@@ -10,16 +10,21 @@ export default function TextChord() {
     
     const chords = [
         {name: 'Cmaj', value: ['C3', 'E3', 'G3']},
+        {name: 'C#maj', value: ['Db3', 'F3', 'Ab3']},
         {name: 'Dmaj', value: ['D3', 'Gb3', 'A3']},
+        {name: 'D#maj', value: ['Eb3', 'G3', 'Bb3']},
         {name: 'Emaj', value: ['E3', 'Ab3', 'B3']},
         {name: 'Fmaj', value: ['F3', 'A3', 'C4']},
+        {name: 'F#maj', value: ['Gb3', 'Bb3', 'Db4']},
         {name: 'Gmaj', value: ['G3', 'B3', 'D4']},
+        {name: 'G#maj', value: ['Ab3', 'C4', 'Eb4']},
         {name: 'Amaj', value: ['A3', 'Db4', 'E4']},
+        {name: 'A#maj', value: ['Bb3', 'D4', 'F4']},
         {name: 'Bmaj', value: ['B3', 'Eb4', 'Gb4']},
     ]
 
 
-    const [chord, setChord] = useState(chords[Math.floor(Math.random() * 6)])
+    const [chord, setChord] = useState(chords[Math.floor(Math.random() * 12)])
 
     // const handleAnswer = (answer) => {
     //     setAnswer([...answerKey, answer])
@@ -54,13 +59,24 @@ export default function TextChord() {
         setTimeout(() => setResult(''), 1000)
         setAnswerChord([])
 
-        setChord(chords[Math.floor(Math.random() * 6)])
+        let random = Math.floor(Math.random() * 11)
+        //всегда на 1 меньше, чем элементом в массиве
+        if (chords[random].name === chord.name) {
+            if (random === chords.length)
+                random = 0
+            else
+                random = random + 1
+        }
+        setChord(chords[random])
     }
 
 
 
   return (
       <div className="text-note">
+        <header>
+            Начните определять аккорд с нижней тоники, последовательно нажимая клавиши на клавиатуре (3шт)
+        </header>
         <Piano ansKeys = {handleAnswer}/>
         <div className="form">
             <h2 className='header'>Тест</h2>

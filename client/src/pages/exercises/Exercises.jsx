@@ -154,7 +154,7 @@ export default function Exercises() {
                   </div>
                   <div className="description">Определите аккорд по названию</div>
                 </Link>
-                <Link className="link module" to="/exercises/text-note">
+                <Link className="link module" to="/exercises/text-scale">
                   <div className="background">
                     <img src={scale} alt="" className="icon" />
                   </div>

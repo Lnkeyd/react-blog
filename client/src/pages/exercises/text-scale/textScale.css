@@ -39,6 +39,11 @@ header {
     max-width: 70%;
 }
 
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
 @media screen and (max-width: 840px) {
     .question {
         font-size: 18px;

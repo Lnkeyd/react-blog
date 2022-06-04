@@ -5,12 +5,17 @@ import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Blog from "./pages/blog/Blog";
 import Exercises from "./pages/exercises/Exercises"
+
 import TextNote from "./pages/exercises/text-note/TextNote"
 import TextChord from "./pages/exercises/text-chord/TextChord";
 import TextScale from "./pages/exercises/text-scale/TextScale";
+import AudioNote from "./pages/exercises/audio-note/AudioNote";
+import AudioChord from "./pages/exercises/audio-chord/AudioChord";
+
 import Instruments from "./pages/instruments/Instruments"
 import Contact from "./pages/contact/Contact"
 import Admin from "./pages/admin/Admin";
+
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Context } from "./context/Context";
@@ -18,7 +23,7 @@ import { getUser } from "./context/ActionCreators";
 import { AccessLevelPage } from "./components/AccessLevelPage";
 
 import "./index.css";
-import AudioNote from "./pages/exercises/audio-note/AudioNote";
+
 
 function App() {
   const { dispatch, user } = useContext(Context);
@@ -40,6 +45,7 @@ function App() {
           <Route path="/exercises/text-chord" element={<TextChord/>}/>
           <Route path="/exercises/text-scale" element={<TextScale/>}/>
           <Route path="/exercises/audio-note" element={<AudioNote/>}/>
+          <Route path="/exercises/audio-chord" element={<AudioChord/>}/>
 
 
           <Route path="/contact" element={<Contact/>}/>

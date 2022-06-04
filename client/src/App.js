@@ -18,6 +18,7 @@ import { getUser } from "./context/ActionCreators";
 import { AccessLevelPage } from "./components/AccessLevelPage";
 
 import "./index.css";
+import AudioNote from "./pages/exercises/audio-note/AudioNote";
 
 function App() {
   const { dispatch, user } = useContext(Context);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/exercises/text-note" element={<TextNote/>}/>
           <Route path="/exercises/text-chord" element={<TextChord/>}/>
           <Route path="/exercises/text-scale" element={<TextScale/>}/>
+          <Route path="/exercises/audio-note" element={<AudioNote/>}/>
 
 
           <Route path="/contact" element={<Contact/>}/>

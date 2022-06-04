@@ -81,7 +81,7 @@ export default function TextChord() {
         <div className="form">
             <h2 className='header'>Тест</h2>
             <div className="question">Определите аккорд: <b>{chord.name}</b></div>
-            <button className="checkAnswer"onClick={check}>Check Your Answer!</button>
+            <button className="checkAnswer"onClick={check}>Проверь себя!</button>
             <div className="answer">{result}</div>
         </div>
       </div>

@@ -112,7 +112,7 @@ export default function TextScale() {
         <div className="form">
             <h2 className='header'>Тест</h2>
             <div className="question">Определите тональность: <b>{scale.name}</b></div>
-            <button className="checkAnswer"onClick={check}>Check Your Answer!</button>
+            <button className="checkAnswer"onClick={check}>Проверь себя!</button>
             <div className="answer">{result}</div>
         </div>
         <footer>

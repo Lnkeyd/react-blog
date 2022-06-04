@@ -37,6 +37,12 @@ header {
     margin-top: 35px;
     font-size: 18px;
     max-width: 70%;
+    color: gray;
+}
+
+footer {
+    max-width: 90%;
+    color: gray;
 }
 
 @media screen and (max-width: 840px) {

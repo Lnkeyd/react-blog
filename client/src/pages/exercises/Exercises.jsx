@@ -164,11 +164,11 @@ export default function Exercises() {
             
             <div className="mode">
               <h2 className='header'>Аудио-режим</h2>
-              <Link className="link module" to="/exercises/text-note">
+              <Link className="link module" to="/exercises/audio-note">
                   <div className="background">
                     <img src={scale} alt="" className="icon" />
                   </div>
-                  <div className="description">Определите тональность по названию</div>
+                  <div className="description">Определите ноту на звук</div>
                 </Link>
             </div>
         </div>

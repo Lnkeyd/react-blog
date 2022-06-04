@@ -29,29 +29,31 @@ footer {
     color: gray;
 }
 
-.audio-chord-module {
+.audio-interval-module {
     display: flex;
     flex-direction: column;
     margin-top: 70px;
-    justify-content: center;
 }
 
-.chord-row {
+.interval-row {
     display: flex;
     justify-content: space-evenly;
-    width: 700px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.interval-item {
+    height: 60px;
+    width: 100px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
     margin-bottom: 30px;
 }
 
-.chord-item {
-    border: none;
-    cursor: pointer;
-    height: 60px;
-    width: 120px
-}
 
 
-.chord-item:hover {
+.interval-item:hover {
     background-color: #e2e2e2;
 }
 
@@ -62,7 +64,7 @@ footer {
     justify-content: space-between;
 }
 
-.chord-play-question {
+.interval-play-question {
     width: 100px;
     height: 40px;
     border: none;
@@ -70,7 +72,7 @@ footer {
     margin-top: 70px;
 }
 
-.play-question:hover {
+.interval-play-question:hover {
     background-color: #e2e2e2;
 }
 
@@ -86,15 +88,16 @@ footer {
         font-size: 14px;
         text-align: center;
     }
-    .audio-chord-module {
-        margin-top: 0;
+    .interval-row {
+        width: 80%;
+        flex-wrap: wrap;
     }
-    .chord-row {
-        height: 400px;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-bottom: 0;
+    .interval-item {
+        height: 50px;
+        width: 80px;
+    }
+    .audio-interval-module {
+        margin-top: 20px;
     }
 }
 

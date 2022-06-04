@@ -104,15 +104,15 @@ export default function AudioChord() {
       <div className="audio-note">
         <header>Прослушайте аккорд, нажав на Вопрос. Затем, определите его, нажав на соответствующую кнопку</header>
         <div className="chord-ref-wrap">
-            <button className="play-question" onClick={() => playRef(chord.value)}>Вопрос</button>
+            <button className="chord-play-question" onClick={() => playRef(chord.value)}>Вопрос</button>
         </div>
-        <div className="audio-module">
-            <div className="module-row">
-                <button className="module-item" id='Maj triad' onClick={(e) => check(e.target.id)}>Мажорное трезвучие</button>
-                <button className="module-item" id='Min triad' onClick={(e) => check(e.target.id)}>Минорное трезвучие</button>
-                <button className="module-item" id='Dominant 7th' onClick={(e) => check(e.target.id)}>Dominant 7th</button>
-                <button className="module-item" id='Maj 7th' onClick={(e) => check(e.target.id)}>Maj 7th</button>
-                <button className="module-item" id='Min 7th' onClick={(e) => check(e.target.id)}>Min 7th</button>
+        <div className="audio-chord-module">
+            <div className="chord-row">
+                <button className="chord-item" id='Maj triad' onClick={(e) => check(e.target.id)}>Мажорное трезвучие</button>
+                <button className="chord-item" id='Min triad' onClick={(e) => check(e.target.id)}>Минорное трезвучие</button>
+                <button className="chord-item" id='Dominant 7th' onClick={(e) => check(e.target.id)}>Dominant 7th</button>
+                <button className="chord-item" id='Maj 7th' onClick={(e) => check(e.target.id)}>Maj 7th</button>
+                <button className="chord-item" id='Min 7th' onClick={(e) => check(e.target.id)}>Min 7th</button>
             </div>
         </div>
         <div className="form">

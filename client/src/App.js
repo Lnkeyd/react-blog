@@ -11,6 +11,7 @@ import TextChord from "./pages/exercises/text-chord/TextChord";
 import TextScale from "./pages/exercises/text-scale/TextScale";
 import AudioNote from "./pages/exercises/audio-note/AudioNote";
 import AudioChord from "./pages/exercises/audio-chord/AudioChord";
+import AudioInterval from "./pages/exercises/audio-interval/AudioInterval";
 
 import Instruments from "./pages/instruments/Instruments"
 import Contact from "./pages/contact/Contact"
@@ -46,6 +47,7 @@ function App() {
           <Route path="/exercises/text-scale" element={<TextScale/>}/>
           <Route path="/exercises/audio-note" element={<AudioNote/>}/>
           <Route path="/exercises/audio-chord" element={<AudioChord/>}/>
+          <Route path="/exercises/audio-interval" element={<AudioInterval/>}/>
 
 
           <Route path="/contact" element={<Contact/>}/>

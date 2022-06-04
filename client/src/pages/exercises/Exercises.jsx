@@ -166,15 +166,21 @@ export default function Exercises() {
               <h2 className='header'>Аудио-режим</h2>
                 <Link className="link module" to="/exercises/audio-note">
                   <div className="background">
-                    <img src={scale} alt="" className="icon" />
+                    <img src={note} alt="" className="icon" />
                   </div>
                   <div className="description">Определите ноту на звук</div>
                 </Link>
                 <Link className="link module" to="/exercises/audio-chord">
                   <div className="background">
-                    <img src={scale} alt="" className="icon" />
+                    <img src={chord} alt="" className="icon" />
                   </div>
                   <div className="description">Определите аккорд на звук</div>
+                </Link>
+                <Link className="link module" to="/exercises/audio-interval">
+                  <div className="background">
+                    <img src={interval} alt="" className="icon" />
+                  </div>
+                  <div className="description">Определите интервал на звук</div>
                 </Link>
             </div>
         </div>

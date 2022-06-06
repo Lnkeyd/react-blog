@@ -1,8 +1,10 @@
 import TopBar from "./components/topbar/TopBar";
 import Single from "./pages/single/Single";
+import Home from "./pages/home/Home"
 import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
+import Theory from "./pages/theory/Theory";
 import Blog from "./pages/blog/Blog";
 import Exercises from "./pages/exercises/Exercises"
 
@@ -40,7 +42,7 @@ function App() {
       <TopBar />
       <div style={{ marginTop: "70px" }}>
         <Routes>
-          <Route path='*' element={<Login />} />
+          <Route path='*' element={<Home />} />
           <Route path="/exercises" element={<Exercises/>}/>
           <Route path="/exercises/text-note" element={<TextNote/>}/>
           <Route path="/exercises/text-chord" element={<TextChord/>}/>
@@ -50,6 +52,8 @@ function App() {
           <Route path="/exercises/audio-interval" element={<AudioInterval/>}/>
 
 
+          {/* <Route path="/" element={<Home/>}/> */}
+          <Route path='/theory' element={<Theory/>} />
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/instruments" element={<Instruments/>}/>
           <Route path='/blog' element={<Blog />} />

@@ -1,0 +1,114 @@
+.theory {
+    margin-top: 85px;
+    display: flex;
+}
+
+.theory__aside {
+    display: flex;
+    position: sticky;
+    top: 100px;
+    flex-direction: column;
+    flex: 4;
+    height: 200px;
+}
+
+.theory__aside__item {
+    padding-left: 50%;
+    padding-right: 50%;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.theory__main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    flex: 11;
+}
+
+.theory__main__article {
+    scroll-margin-top: 85px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.theory__main__article__header {
+    margin-top: 10px;
+}
+
+.theory__main__article__text {
+    margin-top: 15px;
+}
+
+.theory__menu {
+    display: none;
+}
+
+.mobile__theory__aside {
+    display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .theory__aside__item {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 915px) {
+    .theory__aside__item {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .theory__menu {
+        font-size: 18px;
+        display: block;
+        position: sticky;
+        height: 35px;
+        top: 70px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: #fff;
+    }
+    .theory {
+        margin-top: 0;
+    }
+    .theory__aside {
+        display: none;
+    }
+    .theory__main {
+        align-items: center;
+    }
+    .theory__main__article {
+        scroll-margin-top: 120px;
+    }
+    .theory__main__article__header {
+        text-align: center;
+    }
+
+    .mobile__theory__aside {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        padding-top: 20px;
+        top: 100px;
+        flex-direction: column;
+        z-index: 1;
+        height: calc(100vh - 35px);
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #fff;
+    }
+    
+    .mobile__theory__aside__item {
+        text-align: center;
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}

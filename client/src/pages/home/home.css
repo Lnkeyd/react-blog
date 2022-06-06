@@ -2,4 +2,50 @@
     display: flex;
     flex-direction: column;
     margin-top: 85px;
+    height: calc(100vh - 85px);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    background-image: url(https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.toHome__opacity {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.7);
+    /* тут */
+}
+
+.noOpacity {
+    z-index: 2;
+    padding-left: 14%;
+}
+
+.home__header {
+    margin-top: 28px;
+    font-size: 50px;
+}
+
+.home__h2 {
+    margin-top: 24px;
+    font-size: 28px;
+}
+
+.home__maintext {
+    margin-top: 40px;
+}
+
+.home__item {
+    margin-bottom: 20px;
+    font-size: 18px;
+    max-width: 800px;
+}
+
+.home__footer {
+    font-size: 16px;
+    font-weight: bolder;
 }

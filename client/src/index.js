@@ -9,5 +9,5 @@ root.render(
     <App />
   </ContextProvider>
   // @ https://stackoverflow.com/questions/48846289/why-is-my-react-component-is-rendering-twice
-  // убрал strict mode из-за двойного ререндера
+  // strict mode выключен из-за двойного ререндера
 );

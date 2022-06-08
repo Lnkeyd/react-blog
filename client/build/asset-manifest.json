@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1c5398ef.css",
-    "main.js": "/static/js/main.52314030.js",
+    "main.css": "/static/css/main.1d110638.css",
+    "main.js": "/static/js/main.5e41fbc0.js",
     "static/media/guitar.gltf": "/static/media/guitar.645b999c0bde9aba31c5.gltf",
     "static/media/piano.gltf": "/static/media/piano.d8bb85df0e7ee79c343b.gltf",
     "static/media/A3.mp3": "/static/media/A3.c8c276dda023802938d8.mp3",
@@ -29,18 +29,43 @@
     "static/media/Gb3.mp3": "/static/media/Gb3.84384e010e093cf2583c.mp3",
     "static/media/Gb4.mp3": "/static/media/Gb4.c612a902050be973bd55.mp3",
     "static/media/user.png": "/static/media/user.a6143582309785dca610.png",
+    "static/media/theory-notes-keyboard-names.svg": "/static/media/theory-notes-keyboard-names.c10b97642a02b9a1e93ed8fdd43c3e34.svg",
     "static/media/poster.webp": "/static/media/poster.9cdd329d24344dbe8822.webp",
+    "static/media/a-min.svg": "/static/media/a-min.13c95f8bf9908ca1f44644cb707acf83.svg",
+    "static/media/c-sharp-min.svg": "/static/media/c-sharp-min.19732c3f5171d27109f033b85ac34663.svg",
+    "static/media/e-min.svg": "/static/media/e-min.d48c16588ddbe727e0e7d8ff77d78523.svg",
+    "static/media/g-maj.svg": "/static/media/g-maj.f8730b5cc33bfef2483940220fdffdcc.svg",
+    "static/media/c-maj.svg": "/static/media/c-maj.4ef26b08e17d5f6859fa8787cece8b24.svg",
+    "static/media/d-maj.svg": "/static/media/d-maj.78bdd320502a5f5dd6873b5f6b016c74.svg",
     "static/media/chord.svg": "/static/media/chord.f7c5c4daa7e35b1e9af24ee2354f752e.svg",
     "static/media/scale.svg": "/static/media/scale.781c06d9b4c1792f789756d10c5b9efb.svg",
+    "static/media/dominant-7th.svg": "/static/media/dominant-7th.54b0483afddbd13ab18cae091e58b2fd.svg",
+    "static/media/half-dim-7th.svg": "/static/media/half-dim-7th.fc7dcba92e44bdfe546de55660071363.svg",
+    "static/media/maj-7th.svg": "/static/media/maj-7th.443e0d14324894c034b436f0a88bd533.svg",
+    "static/media/min-7th.svg": "/static/media/min-7th.e1e670dc039543f1cd8a35fe7e21306f.svg",
+    "static/media/aug-3rd.svg": "/static/media/aug-3rd.a65d20a554bc0b5d343c7dc35a34c752.svg",
+    "static/media/dim-3rd.svg": "/static/media/dim-3rd.7e3b499d639665cf40f246f78954cd41.svg",
+    "static/media/maj-3rd.svg": "/static/media/maj-3rd.3d5d703708192cc8bb7c049fe205f35f.svg",
+    "static/media/min-3rd.svg": "/static/media/min-3rd.0df20d7a669b899b8d0cf941f6b24eff.svg",
+    "static/media/maj-6th.svg": "/static/media/maj-6th.ceae67190b4f7852ba51d741390cdb31.svg",
+    "static/media/min-2nd.svg": "/static/media/min-2nd.7bba0f70151716ce590a356c0b46a309.svg",
+    "static/media/min-6th.svg": "/static/media/min-6th.146b7267efaf8179839a1edb857bee0c.svg",
+    "static/media/octave.svg": "/static/media/octave.e5c14f1e6f54d8d992d7b3782c152471.svg",
+    "static/media/quarte.svg": "/static/media/quarte.a02d5935e6ddc5f94e69c4393bfae9b8.svg",
+    "static/media/tritone.svg": "/static/media/tritone.0095a429ccb889fed2cf5f0eff5dcba4.svg",
+    "static/media/prima.svg": "/static/media/prima.33c426b29c70ff7282da19533a71876c.svg",
+    "static/media/maj-2nd.svg": "/static/media/maj-2nd.ea5a4d7c051711e9e765b062d9cc3794.svg",
+    "static/media/quinte.svg": "/static/media/quinte.44e4a5385f3a039d31a399ce361b3ef6.svg",
+    "static/media/dim-7th.svg": "/static/media/dim-7th.9a2adbd6e2e10311fc7d0769970d300c.svg",
     "static/media/interval.svg": "/static/media/interval.a1dc1077deee95e584ae2c9dda540e9f.svg",
     "static/media/logo.svg": "/static/media/logo.2c6f8ff487222bf7ac5ab7938f92870f.svg",
     "index.html": "/index.html",
     "static/media/note.svg": "/static/media/note.588b956f1b6910a67692e927e552e27d.svg",
-    "main.1c5398ef.css.map": "/static/css/main.1c5398ef.css.map",
-    "main.52314030.js.map": "/static/js/main.52314030.js.map"
+    "main.1d110638.css.map": "/static/css/main.1d110638.css.map",
+    "main.5e41fbc0.js.map": "/static/js/main.5e41fbc0.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c5398ef.css",
-    "static/js/main.52314030.js"
+    "static/css/main.1d110638.css",
+    "static/js/main.5e41fbc0.js"
   ]
 }

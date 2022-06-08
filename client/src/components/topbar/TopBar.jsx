@@ -107,7 +107,7 @@ export default function TopBar() {
             <>
             <div className="topCenter">
                 <div className='menuItem'>
-                  <Link className='link' to='/'>
+                  <Link className='link' to='/' onClick={() => {setToggleBurger(false)}}>
                     <img className='logo' src={logo} alt='logo' draggable={false} />
                   </Link>
                 </div>

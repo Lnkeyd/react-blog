@@ -2,15 +2,15 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
 module.exports = (req, res, next) => {
-  // get jwt token from cookies
+  // берется jwt-токен из cookies
   const token = req.cookies.token;
 
-  // if token does not exist, error
+  // если токен не существует, ошибка
   if (!token) {
     return res.status(401).json("Error occured");
   }
 
-  // else decode jwt and reassign it's user (from payload) to req.user
+  // иначе декод jwt и переприсвоение user (из payload) на req.user
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.userId = mongoose.Types.ObjectId(decoded.user.id);

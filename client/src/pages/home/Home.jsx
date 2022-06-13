@@ -5,7 +5,6 @@ export default function Home() {
   return (
         <div className="toHome">
           <div className="toHome__opacity"></div>
-          {/* <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" className="toHome__img" /> */}
             <div className="noOpacity">
               <h1 className="home__header">
                 music tutor

@@ -35,7 +35,32 @@ export default function AudioChord() {
         // console.log(chord)
     }
 
-    const types = [getRandomMajor, getRandomMinor]
+    function getRandomAug() {
+        const root = getRandomRootNote();
+        setChord({type: 'Aug triad', value: [sounds[root], sounds[root+4], sounds[root+8]]})
+    }
+
+    function getRandomDim() {
+        const root = getRandomRootNote();
+        setChord({type: 'Dim triad', value: [sounds[root], sounds[root+3], sounds[root+6]]})
+    }
+
+    function getRandomD7() {
+        const root = getRandomRootNote();
+        setChord({type: 'Dominant 7th', value: [sounds[root], sounds[root+4], sounds[root+7], sounds[root+10]]})
+    }
+
+    function getRandomMaj7() {
+        const root = getRandomRootNote();
+        setChord({type: 'Maj 7th', value: [sounds[root], sounds[root+4], sounds[root+7], sounds[root+11]]})
+    }
+
+    function getRandomMin7() {
+        const root = getRandomRootNote();
+        setChord({type: 'Min 7th', value: [sounds[root], sounds[root+3], sounds[root+7], sounds[root+10]]})
+    }
+
+    const types = [getRandomMajor, getRandomMinor, getRandomAug, getRandomDim, getRandomD7, getRandomMaj7, getRandomMin7]
 
     // function setRandomType() {
     //     const rand = types[Math.floor(Math.random() * 2)]
@@ -86,7 +111,7 @@ export default function AudioChord() {
         setTimeout(() => setResult(''), 1000)
         // setAnswer('')
 
-        let random = Math.floor(Math.random() * 1)
+        let random = Math.floor(Math.random() * 6)
         if (types[random] === types[currentTypeIndex]) {
             if (random === types.length)
                 random = 0
@@ -108,8 +133,12 @@ export default function AudioChord() {
         </div>
         <div className="audio-chord-module">
             <div className="chord-row">
-                <button className="chord-item" id='Maj triad' onClick={(e) => check(e.target.id)}>Мажорное трезвучие</button>
-                <button className="chord-item" id='Min triad' onClick={(e) => check(e.target.id)}>Минорное трезвучие</button>
+                <button className="chord-item" id='Maj triad' onClick={(e) => check(e.target.id)}>Maj 3rd</button>
+                <button className="chord-item" id='Min triad' onClick={(e) => check(e.target.id)}>Min 3rd</button>
+                <button className="chord-item" id='Aug triad' onClick={(e) => check(e.target.id)}>Aug 3rd</button>
+                <button className="chord-item" id='Dim triad' onClick={(e) => check(e.target.id)}>Dim 3rd</button> 
+            </div>
+            <div className="chord-row">
                 <button className="chord-item" id='Dominant 7th' onClick={(e) => check(e.target.id)}>Dominant 7th</button>
                 <button className="chord-item" id='Maj 7th' onClick={(e) => check(e.target.id)}>Maj 7th</button>
                 <button className="chord-item" id='Min 7th' onClick={(e) => check(e.target.id)}>Min 7th</button>
@@ -121,9 +150,8 @@ export default function AudioChord() {
         </div>
         <footer>
             <small>Приведены две октавы, наиболее часто употребляемые при написании мелодий.
-                <br/> Первая октава в тренажере соответствует третьей на фортепиано.
-                <br/> Таким образом, нота С3 в тренажере соответствует первой клавише первой октавы и т.д.
-                <br/> В данном упражнении референсом на слух выступает клавиша С3
+                <br/> Среди септаккордов приведены D7, M7 и m7, являющиеся
+                <br/> отправной точкой для различия септаккордов на слух.
             </small>
         </footer>
       </div>

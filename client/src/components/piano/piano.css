@@ -64,24 +64,16 @@
 }
 
 @media screen and (max-width: 620px) {
+    
+    .piano {
+        margin-top: 12%;
+    }
+
     .key {
-        --width: 30px;
+        --width: 6.5vw;
         height: 90px;
     }
-
     .black {
         height: 55px;
-    }
-}
-
-@media screen and (max-width: 468px) {
-    .key {
-        --width: 26px;
-    }
-}
-
-@media screen and (max-width: 468px) {
-    .key {
-        --width: 20px;
     }
 }

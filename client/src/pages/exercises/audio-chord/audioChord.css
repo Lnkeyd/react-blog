@@ -88,13 +88,22 @@ footer {
     }
     .audio-chord-module {
         margin-top: 0;
+        flex-direction: row;
     }
     .chord-row {
-        height: 400px;
+        margin-top: 26px;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
         margin-bottom: 0;
+    }
+    .chord-item {
+        margin-bottom: 12px;
     }
 }
 

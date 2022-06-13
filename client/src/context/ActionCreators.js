@@ -11,8 +11,8 @@ import {
   UserSuccess,
 } from "./Actions";
 
-const authEndpoint = "/api/auth";
 const userEndpoint = "/api/users";
+const authEndpoint = "/api/auth";
 
 export const authUser = async (dispatch, username, password) => {
   dispatch(LoginStart());

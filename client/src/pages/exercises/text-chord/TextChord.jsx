@@ -1,3 +1,5 @@
+import {C3, Db3, D3, Eb3, E3, F3, Gb3, G3, Ab3, A3, Bb3, B3} from '../sounds/Sounds'
+import {C4, Db4, D4, Eb4, E4, F4, Gb4, G4, Ab4, A4, Bb4, B4} from '../sounds/Sounds'
 import { useEffect, useState } from 'react'
 import Piano from '../../../components/piano/Piano'
 import './textChord.css'
@@ -7,37 +9,46 @@ export default function TextChord() {
     const [activeKeys, setActiveKeys] = useState([])
     const [answerChord, setAnswerChord] = useState([])
     const [result, setResult] = useState('')
+    const [chord, setChord] = useState({name: 'Cmaj', value: ['C3', 'E3', 'G3']})
+    const [currentTypeIndex, setCurrentTypeIndex] = useState(0)
     
-    const chords = [
-        {name: 'Cmaj', value: ['C3', 'E3', 'G3']},
-        {name: 'C#maj', value: ['Db3', 'F3', 'Ab3']},
-        {name: 'Dmaj', value: ['D3', 'Gb3', 'A3']},
-        {name: 'D#maj', value: ['Eb3', 'G3', 'Bb3']},
-        {name: 'Emaj', value: ['E3', 'Ab3', 'B3']},
-        {name: 'Fmaj', value: ['F3', 'A3', 'C4']},
-        {name: 'F#maj', value: ['Gb3', 'Bb3', 'Db4']},
-        {name: 'Gmaj', value: ['G3', 'B3', 'D4']},
-        {name: 'G#maj', value: ['Ab3', 'C4', 'Eb4']},
-        {name: 'Amaj', value: ['A3', 'Db4', 'E4']},
-        {name: 'A#maj', value: ['Bb3', 'D4', 'F4']},
-        {name: 'Bmaj', value: ['B3', 'Eb4', 'Gb4']},
-    ]
+    const sounds = ['C3', 'Db3', 'D3', 'Eb3', 'E3', 'F3', 'Gb3', 'G3', 'Ab3', 'A3', 'Bb3', 'B3',
+        'C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'Gb4', 'G4', 'Ab4', 'A4', 'Bb4', 'B4']
+    
+    const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
+    function getRandomRootNote() {
+        return Math.floor(Math.random() * 11)
+        // возвращает радномный индекс у массива sounds первой октавы
+    }
 
-    const [chord, setChord] = useState(chords[Math.floor(Math.random() * 12)])
+    function getRandomMinor() {
+        const root = getRandomRootNote();
+        setChord({name: `${keys[root]}min`, value: [sounds[root], sounds[root+3], sounds[root+7]]})
+    }
 
-    // const handleAnswer = (answer) => {
-    //     setAnswer([...answerKey, answer])
-    // } FOR CHORDS AND SCALES
+    function getRandomMajor() {
+        const root = getRandomRootNote();
+        setChord({name: `${keys[root]}maj`, value: [sounds[root], sounds[root+4], sounds[root+7]]})
+    }
+
+    function getRandomAug() {
+        const root = getRandomRootNote();
+        setChord({name: `${keys[root]}aug`, value: [sounds[root], sounds[root+4], sounds[root+8]]})
+    }
+
+    function getRandomDim() {
+        const root = getRandomRootNote();
+        setChord({name: `${keys[root]}dim`, value: [sounds[root], sounds[root+3], sounds[root+6]]})
+    }
+
+    const types = [getRandomMajor, getRandomMinor, getRandomAug, getRandomDim]
 
     const handleAnswer = (answer) => {
             setAnswerChord([...answerChord, answer.id])
             setActiveKeys([...activeKeys, answer])
         }
 
-    // useEffect(() => {
-    //     console.log(answerKey.id)
-    // }, [])
 
     function compare(a1, a2) {
         return a1.length == a2.length && a1.every((val,index) =>val === a2[index])
@@ -59,15 +70,16 @@ export default function TextChord() {
         setTimeout(() => setResult(''), 1000)
         setAnswerChord([])
 
-        let random = Math.floor(Math.random() * 11)
-        //всегда на 1 меньше, чем элементом в массиве
-        if (chords[random].name === chord.name) {
-            if (random === chords.length)
+        let random = Math.floor(Math.random() * 3)
+        if (types[random] === types[currentTypeIndex]) {
+            if (random === types.length)
                 random = 0
             else
                 random = random + 1
         }
-        setChord(chords[random])
+        setCurrentTypeIndex(random)
+        const rand = types[currentTypeIndex]
+        rand()
     }
 
 
